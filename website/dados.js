@@ -120,7 +120,7 @@ const CONTRATOS = [
   "saida": "Search ESP32 price?"
 }`],
   ["device.output", `{
-  "source": "Jarvis",
+  "source": "core",
   "message": "string, max 460 bytes"
 }`],
   ["device.action", `{

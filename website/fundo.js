@@ -4,7 +4,7 @@
   const canvas = document.getElementById("fundo");
   const ctx = canvas.getContext("2d");
   const INTERVALO = 1000 / 30;
-  const CORES = { jarvis: "70, 200, 255", ultron: "255, 150, 40" };
+  const CORES = { day: "70, 200, 255", night: "255, 150, 40" };
   const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let largura = 0;
@@ -52,7 +52,7 @@
     if (!quieto) requestAnimationFrame(desenhar);
     if (agora - anterior < INTERVALO || document.hidden) return;
     anterior = agora;
-    const rgb = CORES[document.documentElement.dataset.tema] || CORES.jarvis;
+    const rgb = CORES[document.documentElement.dataset.tema] || CORES.day;
     const t = agora / 1000;
 
     desvioX += (alvoX - desvioX) * 0.04;

@@ -12,7 +12,7 @@
   --erro: #ff6b6b;
   --mono: "SF Mono", "JetBrains Mono", "Cascadia Code", "DejaVu Sans Mono", Menlo, monospace;
 }
-:root[data-tema="ultron"] {
+:root[data-tema="night"] {
   --fundo: #070300;
   --painel: rgba(30, 14, 2, .62);
   --linha: rgba(255, 160, 50, .3);

@@ -166,14 +166,13 @@ function montarArquitetura() {
 
 function aplicarTema(tema) {
   document.documentElement.dataset.tema = tema;
-  document.title = tema === "ultron" ? "Ultron" : "Jarvis";
-  document.querySelectorAll(".temas button").forEach((botao) => botao.setAttribute("aria-pressed", botao.dataset.tema === tema));
+    document.querySelectorAll(".temas button").forEach((botao) => botao.setAttribute("aria-pressed", botao.dataset.tema === tema));
   try { localStorage.setItem("tema", tema); } catch { /* optional preference */ }
 }
 
 function temaSalvo() {
-  if (new URLSearchParams(location.search).get("tema") === "ultron") return "ultron";
-  try { return localStorage.getItem("tema") === "ultron" ? "ultron" : "jarvis"; } catch { return "jarvis"; }
+  if (new URLSearchParams(location.search).get("tema") === "night") return "night";
+  try { return localStorage.getItem("tema") === "night" ? "night" : "day"; } catch { return "day"; }
 }
 
 function abrirAba(nome) {

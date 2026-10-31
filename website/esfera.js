@@ -197,11 +197,11 @@
   gl.clearColor(0, 0, 0, 0);
 
   const TEMAS = {
-    jarvis: { cor: [0.2, 0.68, 1.0], quente: [0.86, 0.98, 1.0] },
-    ultron: { cor: [1.0, 0.5, 0.08], quente: [1.0, 0.92, 0.62] },
+    day: { cor: [0.2, 0.68, 1.0], quente: [0.86, 0.98, 1.0] },
+    night: { cor: [1.0, 0.5, 0.08], quente: [1.0, 0.92, 0.62] },
   };
-  const cor = [...TEMAS.jarvis.cor];
-  const quente = [...TEMAS.jarvis.quente];
+  const cor = [...TEMAS.day.cor];
+  const quente = [...TEMAS.day.quente];
   const aproximar = (atual, alvo, passo) => atual.forEach((valor, i) => { atual[i] = valor + (alvo[i] - valor) * passo; });
 
   const ponteiro = { x: 0, y: 0, alvoX: 0, alvoY: 0, forca: 0, alvoForca: 0 };
@@ -257,7 +257,7 @@
       return;
     }
     const suave = (taxa) => 1 - Math.exp(-passo * taxa);
-    const tema = TEMAS[document.documentElement.dataset.tema] || TEMAS.jarvis;
+    const tema = TEMAS[document.documentElement.dataset.tema] || TEMAS.day;
     aproximar(cor, tema.cor, inicial ? 1 : suave(4));
     aproximar(quente, tema.quente, inicial ? 1 : suave(4));
     ponteiro.x += (ponteiro.alvoX - ponteiro.x) * suave(7);
