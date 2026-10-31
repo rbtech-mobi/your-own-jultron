@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-tema="jarvis">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jarvis</title>
+<meta name="description" content="Experimental personal computing system: voice, embedded devices, real-time interaction and autonomous execution.">
+<meta property="og:title" content="Jarvis Engineering Lab">
+<meta property="og:description" content="Experimental personal computing system across AI, embedded devices and real-time interaction.">
+<meta property="og:image" content="https://yellowgreen-goldfinch-897482.hostingersite.com/jarvis.png">
+<link rel="stylesheet" href="estilo.css?v=15">
+</head>
+<body>
+<canvas id="fundo" aria-hidden="true"></canvas>
+
+<div class="quadro">
+  <header class="topo">
+    <div class="temas" role="group" aria-label="Theme">
+      <button type="button" data-tema="jarvis" aria-pressed="true">Jarvis</button>
+      <button type="button" data-tema="ultron" aria-pressed="false">Ultron</button>
+    </div>
+    <span class="versao-topo">Engineering Lab / v0.15</span>
+  </header>
+
+  <nav class="abas" role="tablist" aria-label="Sections">
+    <button role="tab" data-aba="core" aria-selected="true">Core</button>
+    <button role="tab" data-aba="runtime" aria-selected="false">Runtime</button>
+    <button role="tab" data-aba="architecture" aria-selected="false">Architecture</button>
+    <button role="tab" data-aba="benchmarks" aria-selected="false">Benchmarks</button>
+    <button role="tab" data-aba="log" aria-selected="false">Engineering Log</button>
+    <button role="tab" data-aba="manifesto" aria-selected="false">Manifesto</button>
+  </nav>
+
+  <section class="aba ativa" id="core" role="tabpanel">
+    <div class="laboratorio">
+      <div class="holograma">
+        <canvas id="esfera" role="img" aria-label="Interactive holographic core"></canvas>
+      </div>
+      <aside class="hud">
+        <h2>System status</h2>
+        <div class="dados" id="status-sistema"></div>
+        <h2 class="separado">Status semantics</h2>
+        <div class="dados" id="legenda-status"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="aba" id="runtime" role="tabpanel">
+    <h2 class="titulo">Runtime and execution traces</h2>
+    <p class="introducao">Event model of a single session. Traces are illustrative until runtime instrumentation ships, so durations are not measurements.</p>
+    <div class="seletor" id="seletor-trace"></div>
+    <div class="tabela"><table><thead><tr><th>t (s)</th><th>Event</th><th>Component</th><th>State</th></tr></thead><tbody id="trace"></tbody></table></div>
+    <h3 class="subtitulo">Session state machine</h3>
+    <pre id="maquina-estados"></pre>
+  </section>
+
+  <section class="aba" id="architecture" role="tabpanel">
+    <h2 class="titulo">System architecture</h2>
+    <h3 class="subtitulo">Container view</h3>
+    <div class="diagrama" id="diagrama"></div>
+    <div class="legenda">
+      <span><i class="ponto-legenda ativo"></i>Deployed</span>
+      <span><i class="ponto-legenda planejado"></i>Designed, not deployed</span>
+    </div>
+    <div class="grade-arquitetura">
+      <div class="conexoes" id="lista-conexoes"></div>
+      <article class="bloco detalhe" id="detalhe-arquitetura" aria-live="polite"></article>
+    </div>
+    <h3 class="subtitulo">Sequence: approved search</h3>
+    <pre id="sequencia"></pre>
+    <h3 class="subtitulo">Message contracts</h3>
+    <div class="contratos" id="contratos"></div>
+    <h3 class="subtitulo">Failure modes</h3>
+    <div class="tabela"><table><thead><tr><th>Failure</th><th>Detection</th><th>Behavior</th><th>Status</th></tr></thead><tbody id="falhas"></tbody></table></div>
+    <h3 class="subtitulo">Architecture decision records</h3>
+    <div class="adrs" id="adrs"></div>
+  </section>
+
+  <section class="aba" id="benchmarks" role="tabpanel">
+    <h2 class="titulo">Experiments and benchmarks</h2>
+    <p class="introducao">Measured on an Intel i5-2450M with 5.7 GB of RAM and integrated graphics. Runs are single samples unless noted, so read them as engineering signals, not statistics.</p>
+    <div class="tabela"><table><thead><tr><th>Experiment</th><th>Method</th><th>Result</th><th>Conclusion</th></tr></thead><tbody id="benchmarks-lista"></tbody></table></div>
+    <h3 class="subtitulo">Quality gate</h3>
+    <div class="tabela"><table><thead><tr><th>Stage</th><th>Check</th><th>Status</th></tr></thead><tbody id="ci"></tbody></table></div>
+    <p class="nota-tabela">Runs locally as a pre-commit hook. Hosted CI is not configured yet because the repository has no public remote.</p>
+  </section>
+
+  <section class="aba" id="log" role="tabpanel">
+    <h2 class="titulo">Engineering log</h2>
+    <div class="tabela"><table><thead><tr><th>Release</th><th>Change</th><th>Verification</th><th>Known limitation</th></tr></thead><tbody id="registro"></tbody></table></div>
+    <h3 class="subtitulo">Open investigations</h3>
+    <div class="tabela"><table><thead><tr><th>Question</th><th>Blocked on</th></tr></thead><tbody id="investigacoes"></tbody></table></div>
+  </section>
+
+  <section class="aba" id="manifesto" role="tabpanel">
+    <div class="manifesto">
+      <p>An experimental personal computing system exploring the intersection of artificial intelligence, embedded devices, real-time interaction and autonomous execution.</p>
+      <p>Built to investigate what happens when software leaves the browser and becomes part of the physical environment.</p>
+    </div>
+    <p class="aviso-legal">Independent personal project. Not affiliated with Marvel or Disney.</p>
+  </section>
+</div>
+
+<script src="fundo.js?v=15"></script>
+<script src="esfera.js?v=15"></script>
+<script src="dados.js?v=15"></script>
+<script src="site.js?v=15"></script>
+</body>
+</html>
